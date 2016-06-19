@@ -2,6 +2,10 @@
 
 This package is for utilities related to command-line processing.
 
+Import it as:
+
+    import "go.waywardcode.com/cmdline"
+
 It's current only feature is `cmdline.GlobArgs()`, which 
 handles the difference between Unix and Windows shell behavior.
 On windows, globs aren't expanded by the shell, so the program will get a

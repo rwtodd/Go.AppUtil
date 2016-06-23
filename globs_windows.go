@@ -1,6 +1,6 @@
 // +build windows
 
-package cmdline // import "go.waywardcode.com/cmdline"
+package cmdline
 
 import (
 	"os"

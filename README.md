@@ -4,7 +4,7 @@ This package is for utilities related to command-line processing.
 
 Import it as:
 
-    import "go.waywardcode.com/cmdline"
+    import "github.com/rwtodd/cmdline-go"
 
 It's current only feature is `cmdline.GlobArgs()`, which 
 handles the difference between Unix and Windows shell behavior.

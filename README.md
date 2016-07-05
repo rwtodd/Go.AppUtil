@@ -1,17 +1,11 @@
-# cmdline Package
+# Apputil-go Package
 
-This package is for utilities related to command-line processing.
+This package is for utilities commonly needed in applications
 
-Import it as:
+## Status
 
-    import "github.com/rwtodd/cmdline-go"
+The two utilities at present are:
 
-It's current only feature is `cmdline.GlobArgs()`, which 
-handles the difference between Unix and Windows shell behavior.
-On windows, globs aren't expanded by the shell, so the program will get a
-literal "\*.\*" as an argument, rather than a list of matching
-files. 
+  * cross-platform cmdline globbing (/cmdline)
+  * locating resources on a resource path (/resource)
 
-This isn't good for portable behavior between operating systems. So,
-`GlobArgs()` will perform expansion on all arguments on Windows, and 
-do nothing on other platforms.

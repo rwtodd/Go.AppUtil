@@ -12,4 +12,4 @@ do nothing on other platforms.
 
 ## Get 
 
-   go get github.com/rwtodd/apputil-go/cmdline
+   go get github.com/rwtodd/apputil/cmdline

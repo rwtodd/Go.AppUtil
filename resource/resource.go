@@ -9,6 +9,7 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 // A Locator knows how to find resources
@@ -24,15 +25,17 @@ type pathsLocator struct {
 
 // NewPathLocator creates a Locator which uses
 // a fixed set of base paths to find a given
-// resource.  Set useGOPATH to true to append
-// $GOPATH/src to the list of paths. It is
+// resource.  Set a non-empty goPathRepo to append
+// $GOPATH/src/$goPathRepo to the list of paths. It is
 // not considered an error if $GOPATH isn't
 // defined.
-func NewPathLocator(paths []string, useGOPATH bool) Locator {
-	if useGOPATH {
+func NewPathLocator(paths []string, goPathRepo string) Locator {
+	if len(goPathRepo) > 0 {
 		gpth := os.Getenv("GOPATH")
 		if len(gpth) > 0 {
-			paths = append(paths, filepath.Join(gpth, "src"))
+			for _, base := range strings.Split(gpth, ":") {
+				paths = append(paths, filepath.Join(base, "src", goPathRepo))
+			}
 		}
 	}
 	return &pathsLocator{paths}

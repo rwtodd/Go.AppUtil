@@ -12,11 +12,11 @@ provided, which will search a list of provided root paths for a resource.
 
 Example use:
 
-	// 'true' means append $GOPATH/src to the provided list
-	loc := resource.NewPathLocator([]string{"/usr/local/share/go"}, true)
+	// second arg is appended to $GOPATH/src, and added after first arg
+	loc := resource.NewPathLocator([]string{"/usr/local/share/go/mypackage"}, "/github.com/rwtodd/mypackage")
 
 	// look up the licence file in our resources
-	license, err := loc.Path("github.com/rwtodd/mypackage/LICENSE") 
+	license, err := loc.Path("LICENSE") 
 
 ## Future Plans
 

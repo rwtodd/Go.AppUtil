@@ -1,4 +1,4 @@
-# Apputil Package
+# Go.AppUtil Package
 
 This package is for utilities commonly needed in applications
 
